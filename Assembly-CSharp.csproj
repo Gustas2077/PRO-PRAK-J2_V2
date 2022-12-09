@@ -740,14 +740,14 @@
     <Reference Include="UnityEditor.UI">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InputSystem">
-        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    <Reference Include="Unity.PlasticSCM.Editor">
+        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
@@ -755,8 +755,8 @@
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
@@ -790,9 +790,6 @@
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
         <HintPath>C:\Users\turki\PRO-PRAK-J2_V2\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
