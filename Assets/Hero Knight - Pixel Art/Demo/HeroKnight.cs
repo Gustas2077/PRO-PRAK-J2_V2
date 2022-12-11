@@ -12,9 +12,11 @@ public class HeroKnight : MonoBehaviour
     [SerializeField] GameObject m_slideDust;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource landSound;
-    [SerializeField] private AudioSource deathSound;
-    [SerializeField] private AudioSource hurtSound;
     [SerializeField] private AudioSource attackSound;
+    [SerializeField] private AudioSource hurtSound;
+    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private AudioSource rolSound;
+    [SerializeField] private AudioSource blockSound;
 
     private Animator m_animator;
     private Rigidbody2D m_body2d;
@@ -110,13 +112,17 @@ public class HeroKnight : MonoBehaviour
         //Death
         if (Input.GetKeyDown("e") && !m_rolling)
         {
+            deathSound.Play();
             m_animator.SetBool("noBlood", m_noBlood);
             m_animator.SetTrigger("Death");
         }
 
         //Hurt
         else if (Input.GetKeyDown("q") && !m_rolling)
+        {
+            hurtSound.Play();
             m_animator.SetTrigger("Hurt");
+        }
 
         //Attack
         else if (Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
@@ -142,6 +148,7 @@ public class HeroKnight : MonoBehaviour
         // Block
         else if (Input.GetMouseButtonDown(1) && !m_rolling)
         {
+            blockSound.Play();
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
         }
@@ -152,6 +159,7 @@ public class HeroKnight : MonoBehaviour
         // Roll
         else if (Input.GetKeyDown("left shift") && !m_rolling && !m_isWallSliding)
         {
+            rolSound.Play();
             m_rolling = true;
             m_animator.SetTrigger("Roll");
             m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
