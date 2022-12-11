@@ -11,6 +11,8 @@ public class HeroKnight : MonoBehaviour
     [SerializeField] bool m_rolling = false;
     [SerializeField] GameObject m_slideDust;
 
+    [SerializeField] private AudioSource jumpSound;
+
     private Animator m_animator;
     private Rigidbody2D m_body2d;
     private Sensor_HeroKnight m_groundSensor;
@@ -154,6 +156,7 @@ public class HeroKnight : MonoBehaviour
         //Jump
         else if (Input.GetKeyDown("space") && m_grounded && !m_rolling)
         {
+            jumpSound.Play();
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
