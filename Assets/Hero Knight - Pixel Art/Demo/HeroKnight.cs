@@ -12,7 +12,8 @@ public class HeroKnight : MonoBehaviour
     [SerializeField] GameObject m_slideDust;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource landSound;
-    [SerializeField] private AudioSource rollSound;
+    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private AudioSource hurtSound;
     [SerializeField] private AudioSource attackSound;
 
     private Animator m_animator;
