@@ -33,8 +33,15 @@ public class HeroKnight : MonoBehaviour
     private float m_delayToIdle = 0.0f;
     private float m_rollDuration = 4.0f / 7.0f;
     private float m_rollCurrentTime;
+    public int health;
+    public bool gameover;
 
-
+    private void Awake()
+    {
+        health = 3;
+        gameover = false;
+        
+    }
     // Use this for initialization
     void Start()
     {
@@ -50,6 +57,31 @@ public class HeroKnight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float inputX = Input.GetAxis("Horizontal");
+        if (gameover)
+        {
+            m_animator.SetTrigger("Death");
+            m_speed = 0;
+            m_jumpForce = 0;
+            m_rollForce =0;
+        } else
+        {
+            if (inputX > 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                m_facingDirection = 1;
+            }
+
+            else if (inputX < 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+                m_facingDirection = -1;
+            }
+
+            // Move
+            if (!m_rolling)
+                m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+        }
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
@@ -82,24 +114,10 @@ public class HeroKnight : MonoBehaviour
         }
 
         // -- Handle input and movement --
-        float inputX = Input.GetAxis("Horizontal");
+      
 
         // Swap direction of sprite depending on walk direction
-        if (inputX > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-            m_facingDirection = 1;
-        }
-
-        else if (inputX < 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-            m_facingDirection = -1;
-        }
-
-        // Move
-        if (!m_rolling)
-            m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+     
 
         //Set AirSpeed in animator
         m_animator.SetFloat("AirSpeedY", m_body2d.velocity.y);
@@ -110,11 +128,12 @@ public class HeroKnight : MonoBehaviour
         m_animator.SetBool("WallSlide", m_isWallSliding);
 
         //Death
-        if (Input.GetKeyDown("e") && !m_rolling)
+        if (health <= 0 && !m_rolling)
         {
             deathSound.Play();
-            m_animator.SetBool("noBlood", m_noBlood);
-            m_animator.SetTrigger("Death");
+            //m_animator.SetBool("noBlood", m_noBlood);
+
+            gameover = true;
         }
 
         //Hurt
@@ -122,6 +141,7 @@ public class HeroKnight : MonoBehaviour
         {
             hurtSound.Play();
             m_animator.SetTrigger("Hurt");
+            health--;
         }
 
         //Attack
