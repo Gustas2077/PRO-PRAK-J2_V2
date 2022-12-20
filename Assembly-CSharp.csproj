@@ -38,6 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
+     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnightRework.cs" />
+     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DamageOutput.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
      <None Include="Assets\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
